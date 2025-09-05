@@ -24,26 +24,26 @@ class ToolButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         ElevatedButton.icon(
-          onPressed: isGameOver ? null : () => selectTool('O'),
+          onPressed: isGameOver ? null : () => selectTool('square'),
           icon: const Icon(Icons.square_outlined),
           label: const Text('Draw Square'),
           style: ElevatedButton.styleFrom(
             backgroundColor:
-                selectedTool == 'O' ? Colors.blue.shade100 : null,
+                selectedTool == 'square' ? Colors.blue.shade100 : null,
             foregroundColor:
-                selectedTool == 'O' ? Colors.blue.shade800 : null,
+                selectedTool == 'square' ? Colors.blue.shade800 : null,
             textStyle: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
         ElevatedButton.icon(
-          onPressed: isGameOver ? null : () => selectTool('X'),
+          onPressed: isGameOver ? null : () => selectTool('triangle'),
           icon: const Icon(Icons.change_history),
           label: const Text('Draw Triangle'),
           style: ElevatedButton.styleFrom(
             backgroundColor:
-                selectedTool == 'X' ? Colors.red.shade100 : null,
+                selectedTool == 'triangle' ? Colors.red.shade100 : null,
             foregroundColor:
-                selectedTool == 'X' ? Colors.red.shade800 : null,
+                selectedTool == 'triangle' ? Colors.red.shade800 : null,
             textStyle: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),

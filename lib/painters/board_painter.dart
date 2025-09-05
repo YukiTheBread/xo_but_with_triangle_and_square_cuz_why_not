@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/mark.dart';
 
-/// วาดกระดาน NxN และเครื่องหมาย 'O' / 'X'
+/// วาดกระดาน NxN และเครื่องหมาย สี่เหลี่ยม / สามเหลี่ยม
 class BoardPainter extends CustomPainter {
   final List<Mark> marks;
   final double markSize;
@@ -46,12 +46,12 @@ class BoardPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     for (final Mark mark in marks) {
-      if (mark.type == 'O') {
+      if (mark.type == 'square') {
         canvas.drawRect(
           Rect.fromCenter(center: mark.position, width: markSize, height: markSize),
           oPaint,
         );
-      } else if (mark.type == 'X') {
+      } else if (mark.type == 'triangle') {
         final double halfSize = markSize / 2;
         canvas.drawLine(
           mark.position + Offset(-halfSize, -halfSize),
