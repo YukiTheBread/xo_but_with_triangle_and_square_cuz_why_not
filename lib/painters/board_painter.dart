@@ -46,23 +46,19 @@ class BoardPainter extends CustomPainter {
       ..style = PaintingStyle.stroke;
 
     for (final Mark mark in marks) {
-      if (mark.type == 'square') {
+      if (mark.type == 'Square') {
         canvas.drawRect(
           Rect.fromCenter(center: mark.position, width: markSize, height: markSize),
           oPaint,
         );
-      } else if (mark.type == 'triangle') {
+      } else if (mark.type == 'Triangle') {
         final double halfSize = markSize / 2;
-        canvas.drawLine(
-          mark.position + Offset(-halfSize, -halfSize),
-          mark.position + Offset(halfSize, halfSize),
-          xPaint,
-        );
-        canvas.drawLine(
-          mark.position + Offset(-halfSize, halfSize),
-          mark.position + Offset(halfSize, -halfSize),
-          xPaint,
-        );
+        final Path triangle = Path()
+          ..moveTo(mark.position.dx, mark.position.dy - halfSize) // จุดบน
+          ..lineTo(mark.position.dx - halfSize, mark.position.dy + halfSize) // ซ้ายล่าง
+          ..lineTo(mark.position.dx + halfSize, mark.position.dy + halfSize) // ขวาล่าง
+          ..close(); // ปิด path กลับไปที่จุดเริ่มต้น
+        canvas.drawPath(triangle, xPaint);
       }
     }
   }

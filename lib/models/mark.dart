@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// บอกว่าจะวาด x หรือ o ที่ตำแหน่งไหน
 class Mark {
   final Offset position;
-  final String type; // 'square' or 'triangle'
+  final String type; // 'Square' or 'Triangle'
   final int row;
   final int col;
 

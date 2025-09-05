@@ -14,7 +14,7 @@ class OXBoard extends StatefulWidget {
 
 class _OXBoardState extends State<OXBoard> {
   List<Mark> _marks = <Mark>[];
-  String _selectedTool = 'square'; // starting tool
+  String _selectedTool = 'Square'; // starting tool
   bool _isGameOver = false;
   String? _winnerType;
 
@@ -166,7 +166,7 @@ class _OXBoardState extends State<OXBoard> {
       _marks.clear();
       _isGameOver = false;
       _winnerType = null;
-      _selectedTool = 'square'; // Reset to default tool
+      _selectedTool = 'Square'; // Reset to default tool
     });
   }
   // คืนไฟล์ save.txt
