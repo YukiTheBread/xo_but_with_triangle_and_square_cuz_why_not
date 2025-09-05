@@ -36,7 +36,7 @@ class ToolButtons extends StatelessWidget {
           ),
         ),
         ElevatedButton.icon(
-          onPressed: isGameOver ? null : () => selectTool('triangle'),
+          onPressed: isGameOver ? null : () => selectTool('Triangle'),
           icon: const Icon(Icons.change_history),
           label: const Text('Draw Triangle'),
           style: ElevatedButton.styleFrom(
